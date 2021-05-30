@@ -65,7 +65,7 @@ def spam_probability(message):
     for word in message.split():
         if word.lower() in voc:
             # since it's with respect to the vocabulary
-            word_position = list(voc).index(word)
+            word_position = list(voc).index(word.lower())
             n_wi = wi_spam[word_position]
             w_prob = w_prob * ((n_wi + a) / (n_spam + len(voc)))
         else:
@@ -79,7 +79,7 @@ def ham_probability(message):
     
     for word in message.split():
         if word.lower() in voc:
-            word_position = list(voc).index(word)
+            word_position = list(voc).index(word.lower())
             n_wi = wi_ham[word_position]
             w_prob = w_prob * (n_wi + a) / (n_ham + len(voc))
         else:
