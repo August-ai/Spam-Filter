@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from math import prod
 
-# read data with pandas
+# read data with pandas, data from https://archive.ics.uci.edu/ml/datasets/sms+spam+collection
 data = pd.read_csv('datasets/spam_data/SMSSpamCollection', sep='\t', header=None, names=['Label', 'message'])
 
 # lower case it and remove punctuation(note that this will reduce the model's accuracy)
